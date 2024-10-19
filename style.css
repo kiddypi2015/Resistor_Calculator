@@ -1,0 +1,289 @@
+body{
+    background: rgb(255,255,255);
+/* background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(254,136,0,1) 100%, rgba(250,250,250,1) 100%); */
+}
+
+
+.svg-container {
+    display: flex; /* Enables Flexbox for the container */
+    justify-content: center; /* Centers the SVG horizontally */
+    align-items: center; /* Centers the SVG vertically */
+}
+
+
+.colorDropdown {
+    display: none;
+    position: absolute;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+}
+
+.colorDropdown button {
+    display: block;
+    width: 200px;
+    padding: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.colorDropdown button:hover {
+    background-color: #ddd;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+#band1:hover,#band2:hover,#band3:hover,#band4:hover{
+    cursor:pointer;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(254,136,0,1) 100%, rgba(250,250,250,1) 100%); */
+    background: rgb(254,136,0);
+    background: linear-gradient(90deg, rgba(254,136,0,1) 0%, rgba(248,55,0,1) 100%, rgba(250,250,250,1) 100%);
+    padding: 1rem 2rem;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    width: 50px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.company-name {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    list-style: none;
+}
+
+.navbar-links li {
+    margin-left: 20px;
+}
+
+.navbar-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease;
+    font-weight:bold;
+}
+
+.navbar-links a:hover {
+    border-bottom:3px solid #fff;
+}
+
+.demo-btn {
+    background-color: #ff5722;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    border-bottom: none;
+}
+.demo-btn li a{
+    color: #ff5722;
+}
+.demo-btn:hover {
+    color: #000;
+}
+.container
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.container h4{
+    font-size: 20px;
+    color: #ff5722;
+}
+.bandsel {
+    display: flex;
+    flex-direction: column;      /* Stack the label above the select dropdown */
+    align-items: center; 
+    justify-content: center;    /* Align items to the left */
+    margin: 20px 0;              /* Add some spacing */
+}
+
+.bandsel label {
+    font-size: 1.2rem;           /* Slightly larger font for the label */
+    color: #333;                 /* Dark color for text */
+    margin-bottom: 10px;         /* Spacing between label and select box */
+    font-weight: bold;           /* Make the label bold */
+}
+
+.bandsel select {
+    padding: 10px 15px;          /* Add some padding for a better touch area */
+    font-size: 1rem;             /* Set a good font size for readability */
+    border-radius: 8px;          /* Rounded corners */
+    border: 2px solid #ccc;      /* Light gray border */
+    background-color: #f9f9f9;   /* Light background color */
+    color: #333;                 /* Dark text color */
+    cursor: pointer;             /* Show pointer on hover */
+    outline: none;               /* Remove default outline */
+    transition: border-color 0.3s ease; /* Smooth transition on focus/hover */
+}
+
+.bandsel select:focus {
+    border-color: #ff5722;       /* Highlight the border when focused */
+}
+
+.bandsel select:hover {
+    border-color: #e64a19;       /* Change border color on hover */
+}
+
+.animate-charcter
+{
+   text-transform: uppercase;
+  background-image: linear-gradient(
+    -225deg,
+    #231557 0%,
+    #44107a 29%,
+    #ff1361 67%,
+    #fff800 100%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 200% auto;
+  color: #fff;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: textclip 2s linear infinite;
+  display: inline-block;
+  font-size: 70px;
+}
+
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.main-content
+{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border: 2px #000 solid;
+    width: 90%;
+    /* height: 100vh; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 15px;
+    margin-left: 60px;
+}
+.svgimg-div
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.value-boxes {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.value-box {
+    width: 40px;
+    height: 30px;
+    border: 1px solid black;
+    text-align: center;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.value-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* .boxdiv
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: space-around;
+    flex-direction: row;
+} */
+
+.box-div {
+    display: flex; /* Enables Flexbox layout */
+    flex-direction: row; /* Arranges items in a row */
+    justify-content: center; /* Centers items horizontally within the container */
+    padding: 20px; /* Optional: Adds some padding around the container */
+    background-color: #f0f0f0; /* Optional: Sets a background color for the container */
+    border-radius: 8px; /* Optional: Rounds the corners of the container */
+}
+
+.box1, .box2, .box3, .box4 {
+    width: 80px; /* Sets a fixed width for each box */
+    height: 80px; /* Sets a fixed height for each box */
+    /* background-color: lightblue; */
+    border: 2px solid #007bff; /* Adds a border around each box */
+    border-radius: 5px; /* Rounds the corners of each box */
+    display: flex; /* Enables Flexbox layout for inner content */
+    justify-content: center; /* Centers inner content horizontally */
+    align-items: center; /* Centers inner content vertically */
+    font-size: 16px; /* Optional: Sets the font size for the text inside the boxes */
+    margin: 10px; /* Adds spacing around each box */
+}
+
+#Intermediate, #resistanceOutput{
+    height: 50px;
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar {
+        justify-content: space-between;
+    }
+}
+
