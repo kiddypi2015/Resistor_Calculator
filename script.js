@@ -16,10 +16,21 @@ let currentDropdown = '';
 
 function showDropdown(event, dropdownId) {
     // Hide previous dropdown if open
-    if (currentDropdown) {
-        document.getElementById(currentDropdown).style.display = "none";
-        
+    if (currentDropdown ) {
+        document.getElementById(currentDropdown).style.display = "none";  
     }
+    document.addEventListener('click', function (event) {
+        // Check if the clicked element is not one of the bands
+        if (event.target.id !== 'band1' && event.target.id !== 'band2' && event.target.id !== 'band3' && event.target.id !== 'band4') {
+            if (currentDropdown) {
+                const dropdownMenu = document.getElementById(currentDropdown);
+                dropdownMenu.style.display = 'none'; // Close the dropdown
+                currentDropdown = null; // Reset currentDropdown as it's now closed
+            }
+        }
+    });
+    
+
     // Show the clicked dropdown
     currentDropdown = dropdownId;
     const dropdown = document.getElementById(dropdownId);
@@ -49,7 +60,6 @@ function changeColor(band, selectedColor) {
     document.getElementById(currentDropdown).style.display = "none"; 
 }
 
-// Function to calculate the resistance
 // Function to calculate the resistance
 function calculateResistance() { 
     const band1Color = document.getElementById('band1').getAttribute('fill');

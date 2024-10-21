@@ -8,6 +8,7 @@ body{
     display: flex; /* Enables Flexbox for the container */
     justify-content: center; /* Centers the SVG horizontally */
     align-items: center; /* Centers the SVG vertically */
+    margin-left: -8%;
 }
 
 
@@ -250,7 +251,7 @@ body {
     justify-content: center; /* Centers inner content horizontally */
     align-items: center; /* Centers inner content vertically */
     font-size: 16px; /* Optional: Sets the font size for the text inside the boxes */
-    margin: 10px; /* Adds spacing around each box */
+    margin: 20px; /* Adds spacing around each box */
 }
 
 #Intermediate, #resistanceOutput{

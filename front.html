@@ -37,29 +37,28 @@
         <div class="svg-container">
             <svg id="resistorSVG" width="900" height="300" xmlns="http://www.w3.org/2000/svg">
                 <!-- Resistor Body (Rounded Rectangle) -->
-                <rect x="220" y="75" width="460" height="150" fill="lightgray" stroke="black" stroke-width="6" rx="30" ry="30"/>
+                <rect x="220" y="75" width="460" height="150" fill="#d9a27b"  stroke-width="6" rx="30" ry="30"/>
+                <rect x="220" y="55" width="150" height="200" fill="#d9a27b"  stroke-width="6" rx="60" ry="50"stroke-width="6" 
+                stroke-dasharray="480 150 00 500" />
+                
+                <rect x="620" y="55" width="150" height="200" fill="#d9a27b"  stroke-width="6" rx="60" ry="50"/>
+                
                 
                 <!-- Resistor Leads (Lines) -->
                 <line x1="130" y1="150" x2="220" y2="150" stroke="black" stroke-width="6"/>
-                <line x1="680" y1="150" x2="770" y2="150" stroke="black" stroke-width="6"/>
+                <line x1="768" y1="150" x2="871" y2="150" stroke="black" stroke-width="6"/>
                 
-                <!-- Divider Lines between Bands -->
-                <!-- <line x1="340" y1="90" x2="340" y2="210" stroke="black" stroke-width="4"/>
-                <line x1="430" y1="90" x2="430" y2="210" stroke="black" stroke-width="4"/>
-                <line x1="520" y1="90" x2="520" y2="210" stroke="black" stroke-width="4"/>
-                <line x1="610" y1="90" x2="610" y2="210" stroke="black" stroke-width="4"/> -->
-                
-                <!-- Resistor Color Bands -->
-                <rect id="band1" x="280" y="90" width="60" height="120" fill="black" onclick="showDropdown(event, 'band1Dropdown')"/>
-                <rect id="band2" x="370" y="90" width="60" height="120" fill="brown" onclick="showDropdown(event, 'band2Dropdown')"/>
-                <rect id="band3" x="460" y="90" width="60" height="120" fill="red" onclick="showDropdown(event, 'band3Dropdown')"/>
-                <rect id="band4" x="550" y="90" width="60" height="120" fill="gold" onclick="showDropdown(event, 'band4Dropdown')"/>
+                <rect id="band1" x="280" y="57" width="60" height="196" fill="black"    rx="10" ry="10"  onclick="showDropdown(event, 'band1Dropdown')"/>
+                <rect id="band2" x="370" y="75" width="60" height="150" fill="brown" onclick="showDropdown(event, 'band2Dropdown')"/>
+                <rect id="band3" x="460" y="75" width="60" height="150" fill="red" onclick="showDropdown(event, 'band3Dropdown')"/>
+                <rect id="band4" x="650" y="57" width="60" height="196" fill="gold"    rx="10" ry="10" onclick="showDropdown(event, 'band4Dropdown')"/>
 
-                <line id="line1" x1="310" y1="225" x2="310" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band1 -->
-                <line id="line2" x1="400" y1="225" x2="400" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band2 -->
-                <line id="line3" x1="490" y1="225" x2="490" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band3 -->
-                <line id="line4" x1="580" y1="225" x2="580" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band4 -->
-            </svg>
+                <line id="line1" x1="310" y1="252" x2="310" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band1 -->
+                <line id="line2" x1="400" y1="225" x2="450" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band2 -->
+                <line id="line3" x1="490" y1="225" x2="550" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band3 -->
+                <line id="line4" x1="680" y1="252" x2="680" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band4 -->
+            
+                </svg>
         </div>
         
         
