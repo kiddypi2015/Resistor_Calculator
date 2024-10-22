@@ -16,10 +16,21 @@ let currentDropdown = '';
 
 function showDropdown(event, dropdownId) {
     // Hide previous dropdown if open
-    if (currentDropdown) {
-        document.getElementById(currentDropdown).style.display = "none";
-        
+    if (currentDropdown ) {
+        document.getElementById(currentDropdown).style.display = "none";  
     }
+    document.addEventListener('click', function (event) {
+        // Check if the clicked element is not one of the bands
+        if (event.target.id !== 'band1' && event.target.id !== 'band2' && event.target.id !== 'band3' && event.target.id !== 'band4') {
+            if (currentDropdown) {
+                const dropdownMenu = document.getElementById(currentDropdown);
+                dropdownMenu.style.display = 'none'; // Close the dropdown
+                currentDropdown = null; // Reset currentDropdown as it's now closed
+            }
+        }
+    });
+    
+
     // Show the clicked dropdown
     currentDropdown = dropdownId;
     const dropdown = document.getElementById(dropdownId);
@@ -49,7 +60,6 @@ function changeColor(band, selectedColor) {
     document.getElementById(currentDropdown).style.display = "none"; 
 }
 
-// Function to calculate the resistance
 // Function to calculate the resistance
 function calculateResistance() { 
     const band1Color = document.getElementById('band1').getAttribute('fill');
@@ -104,6 +114,49 @@ function observeBandChanges(bandId) {
         attributeFilter: ['fill']
     });
 }
+
+function calculateResistance() { 
+    const band1Color = document.getElementById('band1').getAttribute('fill');
+    const band2Color = document.getElementById('band2').getAttribute('fill');
+    const band3Color = document.getElementById('band3').getAttribute('fill');
+    const band4Color = document.getElementById('band4').getAttribute('fill');
+
+    // Fetch the numerical values of the bands
+    const band1Value = colorValues[band1Color];
+    const band2Value = colorValues[band2Color];
+    const band3Multiplier = multiplierValues[band3Color];
+    const band4Tolerance = toleranceValues[band4Color] || 20; 
+
+    if (band1Value !== undefined && band2Value !== undefined && band3Multiplier !== undefined) {
+        // Calculate resistance
+        const resistanceValue = ((band1Value * 10) + band2Value) * band3Multiplier;
+        const tolerance = band4Tolerance;
+
+        // Determine how to represent the resistance
+        let resistanceText;
+        if (resistanceValue >= 1000) {
+            resistanceText = `${(resistanceValue / 1000).toFixed(2)}KΩ ± ${tolerance}%`;
+        } else {
+            resistanceText = `${resistanceValue}Ω ± ${tolerance}%`;
+        }
+
+        document.getElementById('box1').innerHTML = band1Value;
+        document.getElementById('box2').innerHTML = band2Value;
+        document.getElementById('box3').innerHTML = band3Multiplier;
+        document.getElementById('box4').innerHTML = band4Tolerance;
+        
+        document.getElementById('Intermediate').innerHTML = 
+            `( ${band1Value} * 10 + ${band2Value} ) * ${band3Multiplier}`;
+
+        // Update resistance output with the formatted resistance
+        
+        document.getElementById('resistanceOutput').innerText = `Resistance: ${resistanceText}`;
+    } else {
+        document.getElementById('resistanceOutput').innerText = "Invalid color selection";
+    }
+}
+
+
 
 // Add observers to all band elements on page load
 window.onload = function() {

@@ -10,7 +10,7 @@
 
     <nav class="navbar">
         <div class="navbar-logo">
-            <img src="images\logo-2.png" alt="Company Logo">
+            <img src="logo-2.png" alt="Company Logo">
             <span class="company-name">KiddyPi</span>
         </div>
         <ul class="navbar-links">
@@ -26,7 +26,7 @@
         <div class="row">
             <div class="col-md-12 text-center">
                 <h3 class="animate-charcter"> RESIST-O-MATIC</h3>
-                <center><h4>Calculate your Resistance</h4></center>
+                <center><h4>Calculate the Resistance</h4></center>
             </div>
         </div>
     </div>
@@ -37,76 +37,82 @@
         <div class="svg-container">
             <svg id="resistorSVG" width="900" height="300" xmlns="http://www.w3.org/2000/svg">
                 <!-- Resistor Body (Rounded Rectangle) -->
-                <rect x="220" y="75" width="460" height="150" fill="lightgray" stroke="black" stroke-width="6" rx="30" ry="30"/>
+                <rect x="220" y="75" width="460" height="150" fill="#d9a27b"  stroke-width="6" rx="30" ry="30"/>
+                <rect x="220" y="55" width="150" height="200" fill="#d9a27b"  stroke-width="6" rx="60" ry="50"stroke-width="6" 
+                stroke-dasharray="480 150 00 500" />
+                
+                <rect x="620" y="55" width="150" height="200" fill="#d9a27b"  stroke-width="6" rx="60" ry="50"/>
+                
                 
                 <!-- Resistor Leads (Lines) -->
                 <line x1="130" y1="150" x2="220" y2="150" stroke="black" stroke-width="6"/>
-                <line x1="680" y1="150" x2="770" y2="150" stroke="black" stroke-width="6"/>
+                <line x1="768" y1="150" x2="871" y2="150" stroke="black" stroke-width="6"/>
                 
-                <!-- Divider Lines between Bands -->
-                <!-- <line x1="340" y1="90" x2="340" y2="210" stroke="black" stroke-width="4"/>
-                <line x1="430" y1="90" x2="430" y2="210" stroke="black" stroke-width="4"/>
-                <line x1="520" y1="90" x2="520" y2="210" stroke="black" stroke-width="4"/>
-                <line x1="610" y1="90" x2="610" y2="210" stroke="black" stroke-width="4"/> -->
+                <!-- <rect id="band1" x="265" y="55" width="40" height="199.5" fill="black"    rx="10" ry="200"  onclick="showDropdown(event, 'band1Dropdown')" /> -->
+                <rect id="band1" x="265" y="55" width="40" height="199.5" fill="black"    rx="10" ry="200"  onclick="showDropdown(event, 'band1Dropdown')"/> 
+                <rect id="band2" x="360" y="75" width="40" height="150" fill="brown" rx="10" ry="100" onclick="showDropdown(event, 'band2Dropdown')"/>
+                <rect id="band3" x="440" y="75" width="40" height="150" fill="red" rx="10" ry="100" onclick="showDropdown(event, 'band3Dropdown')"/>
+                <rect id="band4" x="669" y="55" width="40" height="200" fill="gold"    rx="10" ry="600" onclick="showDropdown(event, 'band4Dropdown')"/>
+                <defs>
+                    <marker id="arrow" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto" markerUnits="strokeWidth">
+                    <path d="M0,0 L0,4 L4,2 z" fill="black" />
+                    </marker>
+                </defs>
                 
-                <!-- Resistor Color Bands -->
-                <rect id="band1" x="280" y="90" width="60" height="120" fill="black" onclick="showDropdown(event, 'band1Dropdown')"/>
-                <rect id="band2" x="370" y="90" width="60" height="120" fill="brown" onclick="showDropdown(event, 'band2Dropdown')"/>
-                <rect id="band3" x="460" y="90" width="60" height="120" fill="red" onclick="showDropdown(event, 'band3Dropdown')"/>
-                <rect id="band4" x="550" y="90" width="60" height="120" fill="gold" onclick="showDropdown(event, 'band4Dropdown')"/>
-
-                <line id="line1" x1="310" y1="225" x2="310" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band1 -->
-                <line id="line2" x1="400" y1="225" x2="400" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band2 -->
-                <line id="line3" x1="490" y1="225" x2="490" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band3 -->
-                <line id="line4" x1="580" y1="225" x2="580" y2="300" stroke="black" stroke-width="4" style="display: none;"/> <!-- Line below band4 -->
-            </svg>
+                <line id="line1" x1="285" y1="254" x2="285" y2="290" stroke="black" stroke-width="4" style="display: none;" marker-end="url(#arrow)"/> <!-- Line below band1 -->
+                <line id="line2" x1="380" y1="225" x2="380" y2="290" stroke="black" stroke-width="4" style="display: none;" marker-end="url(#arrow)"/> <!-- Line below band2 -->
+                <line id="line3" x1="460" y1="225" x2="460" y2="290" stroke="black" stroke-width="4" style="display: none;" marker-end="url(#arrow)"/> <!-- Line below band3 -->
+                <line id="line4" x1="688" y1="254" x2="688" y2="290" stroke="black" stroke-width="4" style="display: none;" marker-end="url(#arrow)"/> <!-- Line below band4 -->
+            
+                </svg>
         </div>
         
         
         <!-- Color Dropdowns for each band (using color buttons) -->
         <div id="band1Dropdown" class="colorDropdown" style="display:none; position: absolute; ">
-            <button style="background-color: black; color:white;" onclick="changeColor('band1', 'black')" >Black</button>
-            <button style="background-color: brown;color:white;" onclick="changeColor('band1', 'brown')">Brown</button>
-            <button style="background-color: red; color:white;" onclick="changeColor('band1', 'red')">Red</button>
-            <button style="background-color: orange;" onclick="changeColor('band1', 'orange')">Orange</button>
-            <button style="background-color: yellow;" onclick="changeColor('band1', 'yellow')">Yellow</button>
-            <button style="background-color: green; color:white;" onclick="changeColor('band1', 'green')">Green</button>
-            <button style="background-color: blue; color:white;" onclick="changeColor('band1', 'blue')">Blue</button>
-            <button style="background-color: violet;" onclick="changeColor('band1', 'violet')">Violet</button>
-            <button style="background-color: gray; color:white;" onclick="changeColor('band1', 'gray')">Gray</button>
-            <button style="background-color: white;" onclick="changeColor('band1', 'white')">White</button>
+            <button style="background-color: black; color:white;" onclick="changeColor('band1', 'black')" >Black-0</button>
+            <button style="background-color: brown;color:white;" onclick="changeColor('band1', 'brown')">Brown-1</button>
+            <button style="background-color: red; color:white;" onclick="changeColor('band1', 'red')">Red-2</button>
+            <button style="background-color: orange;" onclick="changeColor('band1', 'orange')">Orange-3</button>
+            <button style="background-color: yellow;" onclick="changeColor('band1', 'yellow')">Yellow-4</button>
+            <button style="background-color: green; color:white;" onclick="changeColor('band1', 'green')">Green-5</button>
+            <button style="background-color: blue; color:white;" onclick="changeColor('band1', 'blue')">Blue-6</button>
+            <button style="background-color: violet;" onclick="changeColor('band1', 'violet')">Violet-7</button>
+            <button style="background-color: gray; color:white;" onclick="changeColor('band1', 'gray')">Gray-8</button>
+            <button style="background-color: white;" onclick="changeColor('band1', 'white')">White-9</button>
         </div>
         
         <div id="band2Dropdown" class="colorDropdown" style="display:none; position: absolute;">
-            <button style="background-color: black; color:white;" onclick="changeColor('band2', 'black')">Black</button>
-            <button style="background-color: brown; color:white;" onclick="changeColor('band2', 'brown')">Brown</button>
-            <button style="background-color: red; color:white;" onclick="changeColor('band2', 'red')">Red</button>
-            <button style="background-color: orange;" onclick="changeColor('band2', 'orange')">Orange</button>
-            <button style="background-color: yellow;" onclick="changeColor('band2', 'yellow')">Yellow</button>
-            <button style="background-color: green; color:white;" onclick="changeColor('band2', 'green')">Green</button>
-            <button style="background-color: blue; color:white;" onclick="changeColor('band2', 'blue')">Blue</button>
-            <button style="background-color: violet;" onclick="changeColor('band2', 'violet')">Violet</button>
-            <button style="background-color: gray; color:white;" onclick="changeColor('band2', 'gray')">Gray</button>
-            <button style="background-color: white;" onclick="changeColor('band2', 'white')">White</button>
+            <button style="background-color: black; color:white;" onclick="changeColor('band2', 'black')">Black-0</button>
+            <button style="background-color: brown; color:white;" onclick="changeColor('band2', 'brown')">Brown-1</button>
+            <button style="background-color: red; color:white;" onclick="changeColor('band2', 'red')">Red-2</button>
+            <button style="background-color: orange;" onclick="changeColor('band2', 'orange')">Orange-3</button>
+            <button style="background-color: yellow;" onclick="changeColor('band2', 'yellow')">Yellow-4</button>
+            <button style="background-color: green; color:white;" onclick="changeColor('band2', 'green')">Green-5</button>
+            <button style="background-color: blue; color:white;" onclick="changeColor('band2', 'blue')">Blue-6</button>
+            <button style="background-color: violet;" onclick="changeColor('band2', 'violet')">Violet-7</button>
+            <button style="background-color: gray; color:white;" onclick="changeColor('band2', 'gray')">Gray-8</button>
+            <button style="background-color: white;" onclick="changeColor('band2', 'white')">White-9</button>
         </div>
         
         <div id="band3Dropdown" class="colorDropdown" style="display:none; position: absolute;">
-            <button style="background-color: black; color:white;" onclick="changeColor('band3', 'black')">Black</button>
-            <button style="background-color: brown; color:white;" onclick="changeColor('band3', 'brown')">Brown</button>
-            <button style="background-color: red; color:white;" onclick="changeColor('band3', 'red')">Red</button>
-            <button style="background-color: orange;" onclick="changeColor('band3', 'orange')">Orange</button>
-            <button style="background-color: yellow;" onclick="changeColor('band3', 'yellow')">Yellow</button>
-            <button style="background-color: green; color:white;" onclick="changeColor('band3', 'green')">Green</button>
-            <button style="background-color: blue; color:white;" onclick="changeColor('band3', 'blue')">Blue</button>
-            <button style="background-color: gray; color:white;" onclick="changeColor('band3', 'gray')">Gray</button>
-            <button style="background-color: white;" onclick="changeColor('band3', 'white')">White</button>
-            <button style="background-color: gold;" onclick="changeColor('band3', 'gold')">Gold</button>
-            <button style="background-color: silver;" onclick="changeColor('band3', 'silver')">Silver</button>
+            <button style="background-color: black; color:white;" onclick="changeColor('band3', 'black')">Black-1Ω</button>
+            <button style="background-color: brown; color:white;" onclick="changeColor('band3', 'brown')">Brown-10Ω</button>
+            <button style="background-color: red; color:white;" onclick="changeColor('band3', 'red')">Red-100Ω</button>
+            <button style="background-color: orange;" onclick="changeColor('band3', 'orange')">Orange-1kΩ</button>
+            <button style="background-color: yellow;" onclick="changeColor('band3', 'yellow')">Yellow-10kΩ</button>
+            <button style="background-color: green; color:white;" onclick="changeColor('band3', 'green')">Green-100kΩ</button>
+            <button style="background-color: blue; color:white;" onclick="changeColor('band3', 'blue')">Blue-1MΩ</button>
+            <button style="background-color: violet;" onclick="changeColor('band2', 'violet')">Violet-10MΩ</button>
+            <button style="background-color: gray; color:white;" onclick="changeColor('band3', 'gray')">Gray-100MΩ</button>
+            <button style="background-color: white;" onclick="changeColor('band3', 'white')">White-1GΩ</button>
+            <button style="background-color: gold;" onclick="changeColor('band3', 'gold')">Gold-0.1Ω</button>
+            <button style="background-color: #e0e0e0;" onclick="changeColor('band3', 'silver')">Silver-0.01Ω</button>
         </div>
         
         <div id="band4Dropdown" class="colorDropdown" style="display:none; position: absolute;">
             <button style="background-color: gold;" onclick="changeColor('band4', 'gold')">Gold</button>
-            <button style="background-color: silver;" onclick="changeColor('band4', 'silver')">Silver</button>
+            <button style="background-color: #e0e0e0;" onclick="changeColor('band4', 'silver')">Silver</button>
         </div>
         
         <!-- Placeholder to display the calculated resistance -->
@@ -120,8 +126,11 @@
         <div>
             <span style='font-size:90px;'>&#8595;</span>
         </div>
-        <p id="Intermediate"></p>
-        <p id="resistanceOutput"></p>
+        <!-- <p id="Intermediate"></p>
+        <p id="resistanceOutput"></p> -->
+
+        <p id="Intermediate" font-size: "20px;"></p><br>
+        <p id="resistanceOutput" font-size:" 1rem;"></p>
 
     <script src="script.js"></script>
 </body>
