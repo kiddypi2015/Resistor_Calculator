@@ -185,7 +185,7 @@ body {
 {
     margin-top: 30px;
     margin-bottom: 30px;
-    border: 2px #000 solid;
+    /* border: 2px #000 solid; */
     width: 90%;
     /* height: 100vh; */
     display: flex;
@@ -236,27 +236,70 @@ body {
     display: flex; /* Enables Flexbox layout */
     flex-direction: row; /* Arranges items in a row */
     justify-content: center; /* Centers items horizontally within the container */
-    padding: 20px; /* Optional: Adds some padding around the container */
-    background-color: #f0f0f0; /* Optional: Sets a background color for the container */
+    padding: 1px; /* Optional: Adds some padding around the container */
+    background-color: transparent; /* Optional: Sets a background color for the container */
     border-radius: 8px; /* Optional: Rounds the corners of the container */
+    margin-right:30px;
+    margin-top: 0px;
+
 }
 
-.box1, .box2, .box3, .box4 {
+.box1 {
     width: 80px; /* Sets a fixed width for each box */
     height: 80px; /* Sets a fixed height for each box */
     /* background-color: lightblue; */
-    border: 2px solid #007bff; /* Adds a border around each box */
+    border: 2px solid #ff1361; /* Adds a border around each box */
     border-radius: 5px; /* Rounds the corners of each box */
     display: flex; /* Enables Flexbox layout for inner content */
     justify-content: center; /* Centers inner content horizontally */
     align-items: center; /* Centers inner content vertically */
     font-size: 16px; /* Optional: Sets the font size for the text inside the boxes */
-    margin: 20px; /* Adds spacing around each box */
+    margin-right:10px;
+}
+.box2{
+    width: 80px; /* Sets a fixed width for each box */
+    height: 80px; /* Sets a fixed height for each box */
+    /* background-color: lightblue; */
+    border: 2px solid #ff1361; /* Adds a border around each box */
+    border-radius: 5px; /* Rounds the corners of each box */
+    display: flex; /* Enables Flexbox layout for inner content */
+    justify-content: center; /* Centers inner content horizontally */
+    align-items: center; /* Centers inner content vertically */
+    font-size: 16px; /* Optional: Sets the font size for the text inside the boxes */
+    margin-right:10px;
+}
+.box3{
+    width: 80px; /* Sets a fixed width for each box */
+    height: 80px; /* Sets a fixed height for each box */
+    /* background-color: lightblue; */
+    border: 2px solid #ff1361; /* Adds a border around each box */
+    border-radius: 5px; /* Rounds the corners of each box */
+    display: flex; /* Enables Flexbox layout for inner content */
+    justify-content: center; /* Centers inner content horizontally */
+    align-items: center; /* Centers inner content vertically */
+    font-size: 16px; /* Optional: Sets the font size for the text inside the boxes */
+    margin-right: 80px; /* Adds spacing around each box */
 }
 
+.box4{
+    width: 80px; /* Sets a fixed width for each box */
+    height: 80px; /* Sets a fixed height for each box */
+    /* background-color: lightblue; */
+    border: 2px solid #ff1361; /* Adds a border around each box */
+    border-radius: 5px; /* Rounds the corners of each box */
+    display: flex; /* Enables Flexbox layout for inner content */
+    justify-content: center; /* Centers inner content horizontally */
+    align-items: center; /* Centers inner content vertically */
+    font-size: 16px; /* Optional: Sets the font size for the text inside the boxes */
+    margin-left: 60px;
+}
+
+
 #Intermediate, #resistanceOutput{
-    height: 50px;
-    font-size: 20px;
+    margin-top:20px ;
+    height: 10px;
+    font-size: 30px;
+    /* font-weight: bolder; */
 }
 
 
